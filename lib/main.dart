@@ -17,23 +17,20 @@ class MyApp extends StatelessWidget {
           title: Text('Flutter Widget'),
         ),
         body: Center(
-          child: Text('Floating Action Button'),
-        ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-        floatingActionButton: FloatingActionButton(
-          child: Icon(
-            Icons.add,
-            color: Colors.red,
+          child: IconButton(
+              onPressed: (){},
+              icon: Image.network('https://tse4.mm.bing.net/th?id=OIP.p5aepZh8OpbpDE8YlmVtWgHaHa&pid=Api&P=0&h=220'),
+            iconSize: 100,
+            tooltip: 'Bubble',
+            color: Colors.blue,
+            disabledColor: Colors.yellow,
+            splashColor: Colors.black,
+            highlightColor: Colors.yellow,
+            hoverColor: Colors.deepPurple,
+            splashRadius: 100,
           ),
-          backgroundColor: Colors.green,
-          shape: RoundedRectangleBorder(
-            side: BorderSide(width: 5, color: Colors.yellow),
-            borderRadius: BorderRadius.all(Radius.circular(100)),
-          ),
-          onPressed: () {},
-          elevation: 40,
-          highlightElevation: 50,
         ),
+
       ),
     );
   }
