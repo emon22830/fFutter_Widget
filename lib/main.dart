@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
 
 void main(){
   runApp(MyApp());
 }
+
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -18,12 +16,28 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      home: Scaffold(
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Center(
+            child: TextField(
+
+              decoration: InputDecoration(
+                prefix: Icon(Icons.person),
+                hintText: 'Email',
+                hintStyle: (TextStyle(color: Colors.red,)),
+                filled: true,
+                labelText: 'Name',
+                // fillColor: Colors.orange,
+                border: OutlineInputBorder(
+                  // borderSide: BorderSide.none
+                  borderRadius: BorderRadius.circular(10),
+                )
+              ),
+            ),
+          ),
+        ),
       ),
-      home: HomePage(),
     );
   }
 }
