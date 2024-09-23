@@ -18,12 +18,23 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Container(
             child: Stack(
+              clipBehavior: Clip.none,
+              // alignment: Alignment.center,
               children: [
                 Container(
                   height: 250,
                   width: 250,
                   color: Colors.teal,
-                )
+                ),
+                Positioned.fill(
+                  top: 40,
+                  right: 50,
+                  child: Container(
+                    height: 70,
+                    width: 70,
+                    color: Colors.limeAccent,
+                  ),
+                ),
 
 
               ],
