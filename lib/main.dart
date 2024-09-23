@@ -4,8 +4,15 @@ void main(){
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -16,30 +23,36 @@ class MyApp extends StatelessWidget {
           title: Text('Demo App'),
         ),
         body: Center(
-          child: Container(
-            child: Stack(
-              clipBehavior: Clip.none,
-              // alignment: Alignment.center,
-              children: [
-                Container(
-                  height: 250,
-                  width: 250,
-                  color: Colors.teal,
-                ),
-                Positioned.fill(
-                  top: 40,
-                  right: 50,
-                  child: Container(
-                    height: 70,
-                    width: 70,
-                    color: Colors.limeAccent,
-                  ),
-                ),
-
-
-              ],
-            ),
-          ),
+          child: IndexedStack(
+            index: index,
+            children: [
+              Container(
+                child: Text('0', style: TextStyle(fontSize: 80, color: Colors.redAccent),),
+              ),
+              Container(
+                child: Text('1', style: TextStyle(fontSize: 80, color: Colors.blueAccent),),
+              ),
+              Container(
+                child: Text('2', style: TextStyle(fontSize: 80, color: Colors.cyanAccent),),
+              ),
+              Container(
+                child: Text('3', style: TextStyle(fontSize: 80, color: Colors.limeAccent),),
+              ),
+            ],
+          )
+        ),
+        floatingActionButton: FloatingActionButton(
+            onPressed: (){
+              setState(() {
+                if(index==3){
+                  index=0;
+                }
+                else{
+                  index = index+1;
+                }
+              });
+            },
+          child: Icon(Icons.change_circle),
         ),
       ),
     );
