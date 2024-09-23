@@ -4,36 +4,29 @@ void main(){
   runApp(MyApp());
 }
 
-
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Center(
-            child: TextField(
-
-              decoration: InputDecoration(
-                prefix: Icon(Icons.person),
-                hintText: 'Email',
-                hintStyle: (TextStyle(color: Colors.red,)),
-                filled: true,
-                labelText: 'Name',
-                // fillColor: Colors.orange,
-                border: OutlineInputBorder(
-                  // borderSide: BorderSide.none
-                  borderRadius: BorderRadius.circular(10),
+        appBar: AppBar(
+          backgroundColor: Colors.grey,
+          title: Text('Demo App'),
+        ),
+        body: Center(
+          child: Container(
+            child: Stack(
+              children: [
+                Container(
+                  height: 250,
+                  width: 250,
+                  color: Colors.teal,
                 )
-              ),
+
+
+              ],
             ),
           ),
         ),
